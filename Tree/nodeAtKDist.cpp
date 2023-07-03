@@ -12,6 +12,15 @@ struct TreeNode {
    }
 };
 
+void findDistance(TreeNode *root, int k){
+   if(root == NULL) return;
+   if(k==0) cout << root->val << " ";
+   else{
+      findDistance(root->left, k-1);
+      findDistance(root->right, k-1);
+   }
+}
+
 int main() {
    TreeNode *root = new TreeNode(10);
    root->left = new TreeNode(20);
@@ -21,4 +30,7 @@ int main() {
    root->left->right->left = new TreeNode(70);
    root->left->right->right = new TreeNode(80);
    root->right->right = new TreeNode(60);
+
+   findDistance(root, 2);
+   return 0;
 }

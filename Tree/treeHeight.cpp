@@ -12,6 +12,13 @@ struct TreeNode {
    }
 };
 
+int height(TreeNode *root){
+   if(root == NULL){
+      return 0;
+   }
+   return (1 + max(height(root->left), height(root->right)));
+}
+
 int main() {
    TreeNode *root = new TreeNode(10);
    root->left = new TreeNode(20);
@@ -21,4 +28,9 @@ int main() {
    root->left->right->left = new TreeNode(70);
    root->left->right->right = new TreeNode(80);
    root->right->right = new TreeNode(60);
+
+   cout << "Height of the tree is\n";
+   cout << height(root) << endl;
+
+   return 0;
 }
