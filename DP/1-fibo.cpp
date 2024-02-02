@@ -4,13 +4,20 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int fib(int n) {
+// 0 1 1 2 3 5
+
+int fib(int n, vector<int> &memo) {
    if(n==0 || n==1){
-      return n;
+      return memo[n] = n;
    }
-   return fib(n-1) + fib(n-2);
+   if(memo[n] != -1){
+      return memo[n];
+   }
+   return memo[n] = fib(n-1, memo) + fib(n-2, memo);
 }
 
 int main() {
-   cout << fib(5) << endl;
+   int n = 7;
+   vector<int> memo(n+2, -1);
+   cout << fib(n, memo) << endl;
 }

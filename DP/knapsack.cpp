@@ -33,13 +33,22 @@ int topDownKnapsack(vector<int> wt, vector<int> val, int W, int n) {
 }
 
 int main() {
-   int dp[1002][1002];
-   memset(dp, -1, sizeof(dp));
+   // int dp[1002][1002];
+   // memset(dp, -1, sizeof(dp));
    vector<int> wt = {95,4,60,32,23,72,80,62,65,46};
-   vector<int> val = {55,10,47,5,4,50,8,61,85,87};
-   // vector<int> wt = {5,4,6,3};
-   // vector<int> val = {10,40,30,50};
-   int W = 269;
-   cout << knapsack(wt, val, W, 10, dp) << endl;
-   cout << topDownKnapsack(wt, val, W, 10) << endl;
+   // vector<int> val = {55,10,47,5,4,50,8,61,85,87};
+   // // vector<int> wt = {5,4,6,3};
+   // // vector<int> val = {10,40,30,50};
+   // int W = 269;
+   // cout << knapsack(wt, val, W, 10, dp) << endl;
+   // cout << topDownKnapsack(wt, val, W, 10) << endl;
+
+   vector<vector<int>> answer;
+   answer.push_back({wt[0]});
+   for(auto u: answer){
+      for(auto v: u){
+         cout << v << " ";
+      }
+   }
+   
 }
